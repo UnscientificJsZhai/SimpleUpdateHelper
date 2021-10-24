@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 
 /**
  * 对比两个release的tag的接口。
- * 实现这个接口的{@link #isNewer(String, String)}方法，提供一个对比方法，更新检查器就可以将带查询的release的tag传入，
+ * 实现这个接口的{@link #isNewer(String, String)}方法，提供一个对比方法，更新检查器就可以将查询到的release的tag传入，
  * 对比可得两个版本谁是最新版。
  *
  * @author UnscientificJsZhai

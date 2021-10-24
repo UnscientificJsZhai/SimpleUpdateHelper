@@ -7,7 +7,13 @@ import com.github.unscientificjszhai.simpleupdatehelper.core.data.Release
 import org.json.JSONException
 import org.json.JSONObject
 
-fun parseAsset(assetJsonObject: JSONObject) = try {
+/**
+ * 解析Asset对象。将网络请求返回的Json字符串转化为的Json对象，反序列化成[Asset]对象。
+ *
+ * @param assetJsonObject 网络请求得到的Json对象。
+ * @return 生成的Asset对象。
+ */
+internal fun parseAsset(assetJsonObject: JSONObject) = try {
     Asset(
         url = assetJsonObject.getString("url"),
         downloadUrl = assetJsonObject.getString("browser_download_url"),
@@ -18,8 +24,13 @@ fun parseAsset(assetJsonObject: JSONObject) = try {
     null
 }
 
-
-fun parseRelease(releaseJsonObject: JSONObject): Release? {
+/**
+ * 解析Release对象。将网络请求返回的Json字符串转化为的Json对象，反序列化成[Release]对象。
+ *
+ * @param releaseJsonObject 网络请求得到的Json对象。
+ * @return 生成的Release对象。
+ */
+internal fun parseRelease(releaseJsonObject: JSONObject): Release? {
     val assets = ArrayList<Asset>()
     val assetsJsonArray = releaseJsonObject.getJSONArray("assets")
     for (index in 0 until assetsJsonArray.length()) {

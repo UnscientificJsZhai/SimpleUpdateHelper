@@ -12,6 +12,7 @@ package com.github.unscientificjszhai.simpleupdatehelper.core.data
  * @param prerelease 是否为预发行版。
  * @param publishedAt 发布时间。
  * @param assets release包含的内容。
+ * @author UnscientificJsZhai
  */
 data class Release(
     val url: String,
